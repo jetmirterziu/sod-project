@@ -1,3 +1,26 @@
-# Ignore the contents of the data folder
+# --- Python & System Garbage ---
+__pycache__/
+*.py[cod]
+*.so
+.DS_Store
+Thumbs.db
+
+# --- Virtual Environment ---
+venv/
+env/
+.env
+
+# --- Dataset ---
 data/*
 !data/.gitkeep
+
+# --- Training Checkpoints ---
+checkpoints/*
+!checkpoints/.gitkeep
+
+# --- IDE Settings ---
+.vscode/
+.idea/
+
+# --- Notebook Checkpoints ---
+.ipynb_checkpoints/
