@@ -77,15 +77,22 @@ streamlit run app.py
 ```
 
 ### 4. Results & Experiments
-#### Metrics (Test Set)
-| Metric	| Score	|
-| :--- | :--- |
-|Mean IoU|	61.5%	|
-|F1-Score|	73.8%	|
-|Precision|	76.5%	|
-|Recall|	77.4%	|
 
-#### Experiments
+### Quantitative Metrics (Test Set - Improved Model)
+| Metric | Score | Analysis |
+| :--- | :--- | :--- |
+| **Mean IoU** | **61.8%** | Improvement over baseline (61.5%). |
+| **F1-Score** | **74.1%** | Balanced performance with a focus on structural accuracy. |
+| **Precision** | **78.1%** | Significant increase (+1.6%) indicates reduced background noise. |
+| **Recall** | **76.9%** | Stable object coverage. |
+
+### Experiments Comparison
+To improve beyond the baseline, two architectural changes were implemented (BatchNormalization + Dropout).
+
+| Experiment | Modifications | Mean IoU | Min Val Loss | Outcome |
+| :--- | :--- | :--- | :--- | :--- |
+| **Baseline** | Standard Conv2D + ReLU | **61.5%** | **0.5393** | Good start, but higher loss indicates less stability. |
+| **Improved** | **1. BatchNormalization**<br>**2. Dropout (0.3/0.4)** | **61.8%** | **0.5205** | **Lower Loss:** Model is more confident.<br>**Higher Precision:** Cleaner object boundaries. |
 
 ### Visual Demonstration
 #### Overlay Visualization
